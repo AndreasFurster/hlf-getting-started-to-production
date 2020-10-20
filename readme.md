@@ -7,7 +7,7 @@ Workshop part 1: https://www.youtube.com/watch?v=ubrA3W1JMk0
 Workshop part 2: https://www.youtube.com/watch?v=3tVk7yrGSSE
 
 Pricing of running Kubernetes cluster on Azure:  
-5 nodes * €0,1746/hour = €0,87/hour = **€637,15/month**  
+5 nodes * €0,1746/hour = **€0,87/hour = €637,15/month**  
 Make sure to [stop](https://docs.microsoft.com/nl-nl/azure/aks/start-stop-cluster) or delete the cluster after following this guide (if you don't like to pay €600 a month)._
 
 ## Development cluster on Azure
