@@ -6,9 +6,9 @@ Github: https://github.com/aidtechnology/hgf-k8s-workshop
 Workshop part 1: https://www.youtube.com/watch?v=ubrA3W1JMk0  
 Workshop part 2: https://www.youtube.com/watch?v=3tVk7yrGSSE
 
-Pricing of running Kubernetes cluster on Azure:  
-5 nodes * €0,1746/hour = **€0,87/hour = €637,15/month**  
-Make sure to [stop](https://docs.microsoft.com/nl-nl/azure/aks/start-stop-cluster) or delete the cluster after following this guide (if you don't like to pay €600 a month)._
+Pricing of running this Kubernetes cluster on Azure:  
+5 nodes * €0,1046/hour = **€0,523/hour = €381,67/month**  
+_Make sure to [stop](https://docs.microsoft.com/nl-nl/azure/aks/start-stop-cluster) or delete the cluster after following this guide (if you don't like to pay €400 a month)._
 
 ## Development cluster on Azure
 
@@ -17,13 +17,13 @@ Requirements:
 - Azure subscription 
 - Docker with kubernetes (check: `docker -v` & `kubectl version`)
 - Helm (check: `helm version`. [Helm install docs](https://helm.sh/docs/intro/install/))
-- Cryptogen (check: `cryptogen version`. [HLF install binaries](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html))
+- HLF binaries in path (check: `cryptogen version`. [HLF install binaries](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html))
 
 ```bash
 # == Create kubernetes cluster on Azure
 
 # Name for resource group
-export GROUP=hlf-getting-started;
+export GROUP=hlf-demo;
 
 # Location of resource group
 export LOCATION=westeurope;
@@ -35,7 +35,7 @@ export NAME=${GROUP}-aks
 az group create -n $GROUP -l $LOCATION;
 
 # Create Kubernetes cluster
-az aks create -g $GROUP -n $NAME -s Standard_D2s_v4 --node-count 4 --generate-ssh-keys;
+az aks create -g $GROUP -n $NAME -s Standard_D2s_v4 --node-count 5 --generate-ssh-keys;
 
 # Get access credentials for managed Kubernetes cluster
 az aks get-credentials -g $GROUP -n $NAME;
